@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eakay.next.repository.mybatis.master.order.OrderDOMapper">
+  <resultMap id="BaseResultMap" type="com.eakay.next.client.domain.OrderDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="customerId" jdbcType="INTEGER" property="customerid" />
+    <result column="carId" jdbcType="INTEGER" property="carid" />
+    <result column="merchantId" jdbcType="INTEGER" property="merchantid" />
+    <result column="priceTypeId" jdbcType="INTEGER" property="pricetypeid" />
+    <result column="priceTypeTableName" jdbcType="VARCHAR" property="pricetypetablename" />
+    <result column="orderStatus" jdbcType="VARCHAR" property="orderstatus" />
+    <result column="subOrderStatus" jdbcType="VARCHAR" property="suborderstatus" />
+    <result column="createdTime" jdbcType="TIMESTAMP" property="createdtime" />
+    <result column="kmsForGet" jdbcType="REAL" property="kmsforget" />
+    <result column="imgForGet" jdbcType="VARCHAR" property="imgforget" />
+    <result column="socForGet" jdbcType="DECIMAL" property="socforget" />
+    <result column="kmsForReturn" jdbcType="REAL" property="kmsforreturn" />
+    <result column="imgForReturn" jdbcType="VARCHAR" property="imgforreturn" />
+    <result column="useCost" jdbcType="DECIMAL" property="usecost" />
+    <result column="totalCost" jdbcType="DECIMAL" property="totalcost" />
+    <result column="backCost" jdbcType="DECIMAL" property="backcost" />
+    <result column="backDescribe" jdbcType="VARCHAR" property="backdescribe" />
+    <result column="socForReturn" jdbcType="DECIMAL" property="socforreturn" />
+    <result column="schemingGetTime" jdbcType="TIMESTAMP" property="scheminggettime" />
+    <result column="schemingReturnTime" jdbcType="TIMESTAMP" property="schemingreturntime" />
+    <result column="realityGetTime" jdbcType="TIMESTAMP" property="realitygettime" />
+    <result column="realityReturnTime" jdbcType="TIMESTAMP" property="realityreturntime" />
+    <result column="schemingGetSiteId" jdbcType="INTEGER" property="scheminggetsiteid" />
+    <result column="schemingReturnSiteId" jdbcType="INTEGER" property="schemingreturnsiteid" />
+    <result column="relityGetSiteId" jdbcType="INTEGER" property="relitygetsiteid" />
+    <result column="relityReturnSiteId" jdbcType="INTEGER" property="relityreturnsiteid" />
+    <result column="earlyGetCost" jdbcType="DECIMAL" property="earlygetcost" />
+    <result column="earlyReturnCost" jdbcType="DECIMAL" property="earlyreturncost" />
+    <result column="laterGetCost" jdbcType="DECIMAL" property="latergetcost" />
+    <result column="laterReturnCost" jdbcType="DECIMAL" property="laterreturncost" />
+    <result column="otherCost" jdbcType="DECIMAL" property="othercost" />
+    <result column="insuranceCost" jdbcType="DECIMAL" property="insurancecost" />
+    <result column="priceTypeName" jdbcType="VARCHAR" property="pricetypename" />
+    <result column="getCarStatus" jdbcType="VARCHAR" property="getcarstatus" />
+    <result column="returnCarStatus" jdbcType="VARCHAR" property="returncarstatus" />
+    <result column="fetchCarConfirm" jdbcType="VARCHAR" property="fetchcarconfirm" />
+    <result column="perKms" jdbcType="REAL" property="perkms" />
+    <result column="perKmsCost" jdbcType="DECIMAL" property="perkmscost" />
+    <result column="menForGet" jdbcType="VARCHAR" property="menforget" />
+    <result column="menForReturn" jdbcType="VARCHAR" property="menforreturn" />
+    <result column="menForCharge" jdbcType="VARCHAR" property="menforcharge" />
+    <result column="returnCarConfirm" jdbcType="VARCHAR" property="returncarconfirm" />
+    <result column="oldId" jdbcType="INTEGER" property="oldid" />
+    <result column="otherDescribe" jdbcType="VARCHAR" property="otherdescribe" />
+    <result column="moneyOfassure" jdbcType="DECIMAL" property="moneyofassure" />
+    <result column="merchantAccountId" jdbcType="INTEGER" property="merchantaccountid" />
+    <result column="customerTable" jdbcType="VARCHAR" property="customertable" />
+    <result column="orderType" jdbcType="INTEGER" property="ordertype" />
+    <result column="orderDescribe" jdbcType="VARCHAR" property="orderdescribe" />
+    <result column="surplusKmsForGet" jdbcType="REAL" property="surpluskmsforget" />
+    <result column="surplusKmsForReturn" jdbcType="REAL" property="surpluskmsforreturn" />
+    <result column="ticket" jdbcType="VARCHAR" property="ticket" />
+    <result column="payment" jdbcType="VARCHAR" property="payment" />
+    <result column="checkUser" jdbcType="VARCHAR" property="checkuser" />
+    <result column="checkDescribe" jdbcType="VARCHAR" property="checkdescribe" />
+    <result column="maintenanceCost" jdbcType="DECIMAL" property="maintenancecost" />
+    <result column="couponId" jdbcType="INTEGER" property="couponid" />
+    <result column="couponCost" jdbcType="DECIMAL" property="couponcost" />
+    <result column="checkReturnTime" jdbcType="TIMESTAMP" property="checkreturntime" />
+    <result column="checkUserId" jdbcType="INTEGER" property="checkuserid" />
+    <result column="isFp" jdbcType="INTEGER" property="isfp" />
+    <result column="orderNO" jdbcType="VARCHAR" property="orderno" />
+    <result column="cs" jdbcType="INTEGER" property="cs" />
+    <result column="UnpayMsg" jdbcType="INTEGER" property="unpaymsg" />
+    <result column="isUseCoupon" jdbcType="TINYINT" property="isusecoupon" />
+    <result column="eakayMoney" jdbcType="DECIMAL" property="eakaymoney" />
+    <result column="payMoney" jdbcType="DECIMAL" property="paymoney" />
+    <result column="insurance" jdbcType="INTEGER" property="insurance" />
+    <result column="paymentTime" jdbcType="TIMESTAMP" property="paymenttime" />
+    <result column="highwayCost" jdbcType="DECIMAL" property="highwaycost" />
+    <result column="suranceCost" jdbcType="DECIMAL" property="surancecost" />
+    <result column="memo" jdbcType="VARCHAR" property="memo" />
+    <result column="deleted" jdbcType="TINYINT" property="deleted" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+    <result column="penalty_cost" jdbcType="DECIMAL" property="penaltyCost" />
+    <result column="calFlag" jdbcType="INTEGER" property="calflag" />
+    <result column="orderFlag" jdbcType="TINYINT" property="orderflag" />
+    <result column="isFreeOrder" jdbcType="INTEGER" property="isfreeorder" />
+    <result column="isSelfReturnCar" jdbcType="TINYINT" property="isselfreturncar" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="source" jdbcType="TINYINT" property="source" />
+    <result column="workOperateStatus" jdbcType="INTEGER" property="workoperatestatus" />
+    <result column="customerServerComments" jdbcType="VARCHAR" property="customerservercomments" />
+    <result column="autoSelfOrderTagContent" jdbcType="VARCHAR" property="autoselfordertagcontent" />
+    <result column="workOrderSetId" jdbcType="INTEGER" property="workordersetid" />
+    <result column="merchantUserId" jdbcType="INTEGER" property="merchantuserid" />
+    <result column="scsUserId" jdbcType="INTEGER" property="scsuserid" />
+  </resultMap>
+
+  <select id="selectByPrimaryKeyAndTablename" resultMap="BaseResultMap">
+    select *
+    from ${tableName}
+    where id = #{orderId}
+  </select>
+    
+  <select id="existTable" resultType="java.lang.Boolean" >
+      select count(1) &gt; 0
+      from information_schema.TABLES
+      where `table_name` = #{tableName}
+  </select>
+
+  <update id="createTableIfNotExist">
+        CREATE TABLE IF NOT EXISTS ${tableName} (
+      `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+      `customerId` int(11) NOT NULL COMMENT '关联用户ID',
+      `carId` int(11) NOT NULL COMMENT '租赁车辆ID',
+      `merchantId` int(11) NOT NULL DEFAULT '0' COMMENT '商户ID',
+      `priceTypeId` int(11) NOT NULL COMMENT '关联套餐表id(merchant_price表id)',
+      `priceTypeTableName` varchar(50) NOT NULL DEFAULT '',
+      `orderStatus` varchar(10) NOT NULL DEFAULT '' COMMENT '订单状态（已付费、已取消、已取车、已还车, 已预约）',
+      `subOrderStatus` varchar(10) DEFAULT NULL COMMENT '订单子状态（正常）',
+      `createdTime` datetime NOT NULL,
+      `kmsForGet` float NOT NULL DEFAULT '0' COMMENT '取车公里数',
+      `imgForGet` varchar(100) NOT NULL DEFAULT '123',
+      `socForGet` decimal(5,2) NOT NULL DEFAULT '0.00',
+      `kmsForReturn` float NOT NULL DEFAULT '0' COMMENT '还车公里数',
+      `imgForReturn` varchar(100) NOT NULL DEFAULT '123',
+      `useCost` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '租赁费用',
+      `totalCost` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '总费用',
+      `backCost` decimal(18,2) NOT NULL DEFAULT '0.00',
+      `backDescribe` varchar(500) NOT NULL DEFAULT '未知',
+      `socForReturn` decimal(5,2) NOT NULL DEFAULT '0.00',
+      `schemingGetTime` datetime NOT NULL COMMENT '计划取车时间',
+      `schemingReturnTime` datetime NOT NULL COMMENT '计划还车时间',
+      `realityGetTime` datetime DEFAULT NULL COMMENT '实际取车时间',
+      `realityReturnTime` datetime DEFAULT NULL COMMENT '实际还车时间',
+      `schemingGetSiteId` int(11) NOT NULL COMMENT '计划取车租赁点',
+      `schemingReturnSiteId` int(11) NOT NULL DEFAULT '0' COMMENT '计划还车租赁点',
+      `relityGetSiteId` int(11) DEFAULT NULL COMMENT '实际取车租赁点',
+      `relityReturnSiteId` int(11) DEFAULT NULL COMMENT '实际还车租赁点',
+      `earlyGetCost` decimal(18,2) NOT NULL DEFAULT '0.00',
+      `earlyReturnCost` decimal(18,2) NOT NULL DEFAULT '0.00',
+      `laterGetCost` decimal(10,2) NOT NULL DEFAULT '0.00',
+      `laterReturnCost` decimal(18,2) NOT NULL DEFAULT '0.00',
+      `otherCost` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '其他收费',
+      `insuranceCost` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '保险费用',
+      `priceTypeName` varchar(50) NOT NULL DEFAULT '' COMMENT '套餐名称',
+      `getCarStatus` varchar(1024) DEFAULT NULL COMMENT '取车状态',
+      `returnCarStatus` varchar(1024) DEFAULT NULL COMMENT '还车状态',
+      `fetchCarConfirm` varchar(255) DEFAULT '客户同意' COMMENT '客户同意,只有一种状态.',
+      `perKms` float(255,0) NOT NULL DEFAULT '0' COMMENT '超出公里数',
+      `perKmsCost` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '超出公里数费用',
+      `menForGet` varchar(20) DEFAULT NULL COMMENT '取车经办人',
+      `menForReturn` varchar(20) DEFAULT NULL COMMENT '还车经办人',
+      `menForCharge` varchar(20) DEFAULT NULL COMMENT '收费经办人',
+      `returnCarConfirm` varchar(255) NOT NULL DEFAULT '等待审查' COMMENT '等待审查/已审查',
+      `oldId` int(11) DEFAULT NULL,
+      `otherDescribe` varchar(500) NOT NULL DEFAULT '',
+      `moneyOfassure` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '保证金',
+      `merchantAccountId` int(11) DEFAULT NULL COMMENT '付款商家账户id',
+      `customerTable` varchar(32) DEFAULT 'customer' COMMENT '客户表名',
+      `orderType` int(11) DEFAULT '1' COMMENT '订单类型（1：普通用户租车，2：个人长租，3：车辆调度，4：公务用车，5：政企分时）',
+      `orderDescribe` varchar(500) DEFAULT '' COMMENT '订单描述',
+      `surplusKmsForGet` float(255,0) NOT NULL DEFAULT '0' COMMENT '取车续航里程',
+      `surplusKmsForReturn` float(255,0) NOT NULL DEFAULT '0' COMMENT '还车续航里程',
+      `ticket` varchar(100) NOT NULL DEFAULT '' COMMENT '交易记录小票',
+      `payment` varchar(20) NOT NULL DEFAULT '' COMMENT '支付方式',
+      `checkUser` varchar(20) NOT NULL DEFAULT '' COMMENT '核对人',
+      `checkDescribe` varchar(255) NOT NULL DEFAULT '' COMMENT '核对描述',
+      `maintenanceCost` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '维修费用',
+      `couponId` int(11) DEFAULT NULL COMMENT '优惠卷Id',
+      `couponCost` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '优惠费用',
+      `checkReturnTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '审核还车时间',
+      `checkUserId` int(11) DEFAULT NULL COMMENT '审核员工ID',
+      `isFp` int(2) NOT NULL DEFAULT '0' COMMENT '是否已开发票（0 未开 1 已开）',
+      `orderNO` varchar(50) NOT NULL DEFAULT '' COMMENT '合同编号',
+      `cs` int(11) DEFAULT NULL,
+      `UnpayMsg` int(2) DEFAULT '0' COMMENT '2小时内未发送为0，2小时内发送过为1,24小时内发送过为2',
+      `isUseCoupon` tinyint(2) NOT NULL DEFAULT '1' COMMENT '是否可以使用优惠卷（1：可以 0：不可以）',
+      `eakayMoney` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '使用易开币付费金额',
+      `payMoney` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '线上支付金额',
+      `insurance` int(2) NOT NULL DEFAULT '0' COMMENT '是否购买保险（0:没有购买，1:购买过保险）',
+      `paymentTime` datetime DEFAULT NULL COMMENT '付费时间',
+      `highwayCost` decimal(10,2) DEFAULT '0.00' COMMENT '过路费',
+      `suranceCost` decimal(9,2) NOT NULL DEFAULT '0.00' COMMENT '保险费用',
+      `memo` varchar(255) DEFAULT '' COMMENT '是否有充电线和行驶证',
+      `deleted` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除   0-未删除  1-已删除',
+      `companyId` bigint(20) DEFAULT NULL COMMENT '政企平台 或 其他平台 外部ID',
+      `penalty_cost` decimal(10,2) DEFAULT '0.00' COMMENT '惩罚费用',
+      `calFlag` int(11) DEFAULT '0' COMMENT '是否为低价调度',
+      `orderFlag` tinyint(2) NOT NULL DEFAULT '0' COMMENT '定单标记0:老订单 1:新订单',
+      `isFreeOrder` int(11) DEFAULT '0' COMMENT '是否免审订单0、否 1、是',
+      `isSelfReturnCar` tinyint(2) DEFAULT '0' COMMENT '是否自助还车 1是，0否,2免审还车',
+      `remark` varchar(50) DEFAULT '' COMMENT '备注(用于客服还车审核 备注信息)',
+      `source` tinyint(2) DEFAULT NULL COMMENT '订单来源：1正常用户，3预授权，4小程序，5:h5',
+      `workOperateStatus` int(11) DEFAULT '0' COMMENT '客服订单处理状态： 0 未处理 1 被忽略 2 处理中 3 已处理',
+      `customerServerComments` varchar(500) DEFAULT '' COMMENT '客服备注',
+      `autoSelfOrderTagContent` varchar(255) DEFAULT '' COMMENT '自助订单退回标签',
+      `workOrderSetId` int(11) DEFAULT '0' COMMENT '自助还车  客服忽略的标签',
+      `merchantUserId` int(11) DEFAULT NULL COMMENT '客服在merchantUser表的id',
+      `scsUserId` int(11) DEFAULT '0' COMMENT 'scs_user表主键  客服记录表',
+      PRIMARY KEY (`id`),
+      KEY `index_ids` (`merchantId`,`orderStatus`,`customerId`,`carId`,`relityGetSiteId`,`relityReturnSiteId`,`fetchCarConfirm`,`returnCarConfirm`,`orderType`) USING BTREE,
+      KEY `index_orderstatus` (`merchantId`,`orderStatus`,`orderType`),
+      KEY `IDX_OR_CU_ME` (`orderStatus`,`customerId`,`merchantId`),
+      KEY `index_companyId` (`companyId`),
+      KEY `IDX_ORDERSTATUS_CARID` (`orderStatus`,`carId`) USING BTREE,
+      KEY `index_schemingReturnTime` (`schemingReturnTime`) USING BTREE COMMENT '自助还车 申请还车时间排序索引',
+      KEY `index_returnCarConfirm` (`returnCarConfirm`) USING BTREE COMMENT '还车审核确认字段索引',
+      KEY `index_merchantId` (`merchantId`) USING HASH,
+      KEY `Index_insure` (`insurance`) USING BTREE,
+      KEY `Index_menForGet` (`menForGet`) USING BTREE,
+      KEY `Index_usecost` (`useCost`) USING BTREE,
+      KEY `Index_unit` (`customerTable`) USING BTREE,
+      KEY `index_carId` (`carId`,`customerId`),
+      KEY `index_isSelfReturnCar` (`isSelfReturnCar`),
+      KEY `index_scsUserId` (`scsUserId`) COMMENT '客服scsUserId索引',
+      KEY `index_workOperateStatus` (`workOperateStatus`) USING BTREE,
+      KEY `index_autoSelfOrderTagContent` (`autoSelfOrderTagContent`) COMMENT '自助还车忽略内容',
+      KEY `index_status_paymenttime` (`orderStatus`,`paymentTime`),
+      KEY `index_customerId_orderType_orderStatus` (`customerId`,`orderType`,`orderStatus`) USING BTREE
+    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+  </update>
+
+  <insert id="copyOrderToSplit">
+        insert into ${tableName} select * from `order` where id = #{orderId}
+  </insert>
+
+</mapper>
