@@ -12,9 +12,5 @@
         -Dspring.config.location=/Users/panda_zyp/Documents/Java/IDEA_WorkSpace/svn_21/config-test/firststep/application.properties
         -Dlogging.config=/Users/panda_zyp/Documents/Java/IDEA_WorkSpace/svn_21/config-test/firststep/log4j2.xml
         -Dapp.log.home=/Users/panda_zyp/Documents/logs/nextstep
-     
-    
-  
-   
-
-
+ 
+* 测试
