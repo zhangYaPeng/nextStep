@@ -1,15 +1,13 @@
 package com.eakay.next.web.controller.order;
 
 import com.eakay.next.biz.service.order.OrderService;
+import com.eakay.next.biz.service.wiki.WikiCategoryService;
 import com.eakay.next.client.domain.OrderDO;
 import com.eakay.next.client.mongodb.order.OrderHistoryMongo;
 import com.eakay.next.client.util.response.ResponseObject;
 import com.eakay.next.client.util.response.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
@@ -22,6 +20,9 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private WikiCategoryService wikiCategoryService;
 
     /**
      * 新增订单
@@ -180,6 +181,17 @@ public class OrderController {
 
             return ResponseUtil.getOK(list);
 
+    }
+
+    @GetMapping(value = "/testPool")
+    public ResponseObject testPool(Integer type) {
+        if ( type != null && type == 1 ) {
+            orderService.testType();
+        } else {
+            wikiCategoryService.testType2(type);
+        }
+
+        return ResponseUtil.getOK();
     }
 
 

@@ -27,4 +27,6 @@ public interface OrderService {
 
     void putDataToMongo(Integer orderId);
 
+    void testType();
+
 }

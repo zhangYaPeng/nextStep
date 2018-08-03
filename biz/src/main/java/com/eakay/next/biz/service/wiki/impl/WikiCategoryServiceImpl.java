@@ -1,5 +1,6 @@
 package com.eakay.next.biz.service.wiki.impl;
 
+import com.eakay.next.biz.job.MyJob;
 import com.eakay.next.biz.service.wiki.WikiCategoryService;
 import com.eakay.next.client.domain.WikiCategoryDO;
 import com.eakay.next.client.domain.WikiDO;
@@ -9,6 +10,7 @@ import com.eakay.next.repository.mybatis.master.WikiCategoryDOMasterMapper;
 import com.eakay.next.repository.mybatis.master.WikiDOMasterMapper;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
@@ -26,6 +28,9 @@ public class WikiCategoryServiceImpl implements WikiCategoryService {
 
     @Autowired
     private WikiDOMasterMapper wikiDOMasterMapper;
+
+    @Autowired
+    private ThreadPoolTaskExecutor taskExecutor;
 
     @Override
     public List<WikiCategoryDO> list(WikiCategory4ListFormBean formBean) {
@@ -96,5 +101,22 @@ public class WikiCategoryServiceImpl implements WikiCategoryService {
         if ( flag == 1 ) {
             throw new CommonRuntimeException("我出错了");
         }
+    }
+
+    @Override
+    public void testType2(int type) {
+        int b = 1;
+        b = b * 50;
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        b = 100;
+
+        taskExecutor.execute(new MyJob(type + ""));
+
     }
 }

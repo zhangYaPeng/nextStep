@@ -21,4 +21,6 @@ public interface WikiCategoryService {
 
     void addWiki(int flag);
 
+    void testType2(int type);
+
 }

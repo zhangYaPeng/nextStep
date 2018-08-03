@@ -1,5 +1,6 @@
 package com.eakay.next.biz.service.order.impl;
 
+import com.eakay.next.biz.job.MyJob;
 import com.eakay.next.client.domain.OrderDO;
 import com.eakay.next.client.exceptions.CommonRuntimeException;
 import com.eakay.next.client.mongodb.order.OrderHistoryMongo;
@@ -13,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.task.TaskExecutor;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
@@ -37,6 +40,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderRedisDao orderRedisDao;
+
+    @Autowired
+    private ThreadPoolTaskExecutor taskExecutor;
 
     @Autowired
     @Qualifier("orderTableSplitStrategy")
@@ -175,5 +181,19 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderHistoryMongo> historyList(Integer customerId) {
         List<OrderHistoryMongo> list = orderMongoDao.list(customerId);
         return list;
+    }
+
+    @Override
+    public void testType() {
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        int a = 1;
+        a++;
+        a = a + 15;
+        taskExecutor.execute(new MyJob("myjob1"));
+
     }
 }
